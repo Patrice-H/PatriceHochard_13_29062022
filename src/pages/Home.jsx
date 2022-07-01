@@ -1,9 +1,14 @@
+import { useEffect } from 'react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Feature from '../components/Feature';
 import { featuresList } from '../data/featuresList';
 
 const Home = () => {
+  useEffect(() => {
+    document.title = 'Argent Bank - Home Page';
+  }, []);
+
   return (
     <>
       <Navbar />
