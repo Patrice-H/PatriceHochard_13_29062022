@@ -1,7 +1,21 @@
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
-const User = () => {
+const Profile = () => {
+  const navigate = useNavigate();
+  const isUserLogedIn = useSelector((state) => state.login.isUserLogedIn);
+
+  useEffect(() => {
+    document.title = 'Argent Bank - User Page';
+    if (!isUserLogedIn) {
+      navigate('/');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -51,4 +65,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default Profile;
