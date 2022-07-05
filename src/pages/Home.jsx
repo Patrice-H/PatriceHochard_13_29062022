@@ -3,10 +3,19 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Feature from '../components/Feature';
 import { featuresList } from '../data/featuresList';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+  const isUserLogedIn = useSelector((state) => state.login.isUserLogedIn);
+
   useEffect(() => {
     document.title = 'Argent Bank - Home Page';
+    if (isUserLogedIn) {
+      navigate('/profile');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
