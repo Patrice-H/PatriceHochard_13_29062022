@@ -186,6 +186,20 @@ body {
   margin-left: 0.25rem;
 }
 
+.label-error-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label-error-wrapper span {
+  font-weight: bold;
+  color: red;
+}
+
+.input-error {
+  background-color: #ffcccc;
+}
+
 .input-wrapper {
   display: flex;
   flex-direction: column;
