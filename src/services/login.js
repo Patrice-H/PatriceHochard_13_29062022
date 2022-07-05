@@ -1,6 +1,6 @@
 import { URL_API } from '../utils/config';
 
-const login = () => {
+const login = async () => {
   const email = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
@@ -17,9 +17,9 @@ const login = () => {
     },
   };
 
-  fetch(`${URL_API}/user/login`, options)
-    .then((response) => response.json())
-    .then((data) => console.log(data.body.token));
+  return fetch(`${URL_API}/user/login`, options).then((response) => {
+    return response.json();
+  });
 };
 
 export default login;
