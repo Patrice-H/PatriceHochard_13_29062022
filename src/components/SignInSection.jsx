@@ -14,12 +14,18 @@ const SignInSection = () => {
   const errorLogin = useSelector((state) => state.login.errorLogin);
 
   const loginUser = () => {
+    const remember = document.getElementById('remember-me').checked;
+
     login().then((data) => {
       if (data.status === 200) {
         dispatch(addToken(data.body.token));
         dispatch(toggleLoginLogout());
         if (errorLogin !== null) {
           dispatch(manageErrorLogin(null));
+        }
+        if (remember) {
+          localStorage.setItem('tokenStored', data.body.token);
+          console.log(sessionStorage.getItem('tokenStored'));
         }
         navigate('/profile');
       } else {

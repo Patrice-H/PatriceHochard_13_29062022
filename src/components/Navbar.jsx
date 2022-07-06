@@ -9,6 +9,7 @@ const Navbar = () => {
   const logoutUser = () => {
     dispatch(addToken(null));
     dispatch(toggleLoginLogout());
+    localStorage.removeItem('tokenStored');
   };
 
   const isUserLogedIn = useSelector((state) => state.login.isUserLogedIn);

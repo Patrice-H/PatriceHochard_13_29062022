@@ -7,18 +7,24 @@ import Profile from './pages/Profile';
 import './index.css';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
+import { persistStore } from 'reduxjs-toolkit-persist';
+import { PersistGate } from 'redux-persist/integration/react';
+
+let persistor = persistStore(store);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <React.StrictMode>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/signin" element={<SignIn />}></Route>
-          <Route path="/profile" element={<Profile />}></Route>
-        </Routes>
-      </Router>
-    </React.StrictMode>
+    <PersistGate loading={null} persistor={persistor}>
+      <React.StrictMode>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/signin" element={<SignIn />}></Route>
+            <Route path="/profile" element={<Profile />}></Route>
+          </Routes>
+        </Router>
+      </React.StrictMode>
+    </PersistGate>
   </Provider>
 );
