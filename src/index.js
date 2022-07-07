@@ -16,15 +16,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <React.StrictMode>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/signin" element={<SignIn />}></Route>
-            <Route path="/profile" element={<Profile />}></Route>
-          </Routes>
-        </Router>
-      </React.StrictMode>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/signin" element={<SignIn />}></Route>
+          <Route path="/profile" element={<Profile />}></Route>
+        </Routes>
+      </Router>
     </PersistGate>
   </Provider>
 );
