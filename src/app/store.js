@@ -4,6 +4,7 @@ import {
   getDefaultMiddleware,
 } from '@reduxjs/toolkit';
 import loginReducer from '../features/login/loginSlice';
+import profileReducer from '../features/profile/profileSlice';
 
 import {
   persistReducer,
@@ -25,6 +26,7 @@ const persistConfig = {
 
 const reducers = combineReducers({
   login: loginReducer,
+  profile: profileReducer,
 });
 
 const _persistedReducer = persistReducer(persistConfig, reducers);
@@ -33,16 +35,7 @@ export const store = configureStore({
   reducer: _persistedReducer,
   middleware: getDefaultMiddleware({
     serializableCheck: {
-      /* ignore persistance actions */
       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
     },
   }),
 });
-
-/*
-export const store = configureStore({
-  reducer: {
-    login: loginReducer,
-  },
-});
-*/
