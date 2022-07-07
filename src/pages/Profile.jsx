@@ -1,18 +1,34 @@
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import userProfile from '../services/userProfile';
+import { getFirstName, getLastName } from '../features/profile/profileSlice';
 
 const Profile = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const token = useSelector((state) => state.login.token);
   const isUserLogedIn = useSelector((state) => state.login.isUserLogedIn);
 
+  const firstName = useSelector((state) => state.profile.firstName);
+  const lastName = useSelector((state) => state.profile.lastName);
+
   useEffect(() => {
-    document.title = 'Argent Bank - User Page';
     if (!isUserLogedIn) {
       navigate('/');
+      return;
     }
+    document.title = 'Argent Bank - Profile Page';
+    userProfile(token).then((data) => {
+      if (firstName === null) {
+        dispatch(getFirstName(data.body.firstName));
+      }
+      if (lastName === null) {
+        dispatch(getLastName(data.body.lastName));
+      }
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -24,7 +40,9 @@ const Profile = () => {
           <h1>
             Welcome back
             <br />
-            Tony Jarvis!
+            {firstName && firstName}
+            &nbsp;
+            {lastName && lastName}
           </h1>
           <button className="edit-button">Edit Name</button>
         </div>
