@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   firstName: null,
   lastName: null,
+  editMode: false,
 };
 
 export const profileSlice = createSlice({
@@ -15,9 +16,12 @@ export const profileSlice = createSlice({
     getLastName: (state, action) => {
       state.lastName = action.payload;
     },
+    setEditMode: (state, action) => {
+      state.editMode = action.payload;
+    },
   },
 });
 
-export const { getFirstName, getLastName } = profileSlice.actions;
+export const { getFirstName, getLastName, setEditMode } = profileSlice.actions;
 
 export default profileSlice.reducer;
