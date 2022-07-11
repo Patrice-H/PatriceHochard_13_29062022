@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  getFirstName,
-  getLastName,
+  setFirstName,
+  setLastName,
   setEditMode,
 } from '../features/profile/profileSlice';
 import updateProfile from '../services/updateProfile';
@@ -23,8 +23,8 @@ const ProfileEditor = () => {
 
     if (firstUpdated !== firstName || lastUpdated !== lastName) {
       updateProfile(token, firstUpdated, lastUpdated).then((data) => {
-        dispatch(getFirstName(data.body.firstName));
-        dispatch(getLastName(data.body.lastName));
+        dispatch(setFirstName(data.body.firstName));
+        dispatch(setLastName(data.body.lastName));
       });
     }
     dispatch(setEditMode(false));

@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom';
 import logo from '../assets/argentBankLogo.png';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToken, toggleLoginLogout } from '../features/login/loginSlice';
-import { getFirstName, getLastName } from '../features/profile/profileSlice';
+import { setToken, toggleLoginLogout } from '../features/login/loginSlice';
+import { setFirstName, setLastName } from '../features/profile/profileSlice';
 
 const Navbar = () => {
   const dispatch = useDispatch();
 
   const logoutUser = () => {
-    dispatch(addToken(null));
+    dispatch(setToken(null));
     dispatch(toggleLoginLogout());
-    dispatch(getFirstName(null));
-    dispatch(getLastName(null));
+    dispatch(setFirstName(null));
+    dispatch(setLastName(null));
     localStorage.removeItem('tokenStored');
   };
 

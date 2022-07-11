@@ -10,10 +10,10 @@ export const profileSlice = createSlice({
   name: 'profile',
   initialState,
   reducers: {
-    getFirstName: (state, action) => {
+    setFirstName: (state, action) => {
       state.firstName = action.payload;
     },
-    getLastName: (state, action) => {
+    setLastName: (state, action) => {
       state.lastName = action.payload;
     },
     setEditMode: (state, action) => {
@@ -22,6 +22,6 @@ export const profileSlice = createSlice({
   },
 });
 
-export const { getFirstName, getLastName, setEditMode } = profileSlice.actions;
+export const { setFirstName, setLastName, setEditMode } = profileSlice.actions;
 
 export default profileSlice.reducer;

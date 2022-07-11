@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import login from '../services/login';
 import {
-  addToken,
+  setToken,
   toggleLoginLogout,
   manageErrorLogin,
 } from '../features/login/loginSlice';
@@ -18,7 +18,7 @@ const SignInSection = () => {
 
     login().then((data) => {
       if (data.status === 200) {
-        dispatch(addToken(data.body.token));
+        dispatch(setToken(data.body.token));
         dispatch(toggleLoginLogout());
         if (errorLogin !== null) {
           dispatch(manageErrorLogin(null));

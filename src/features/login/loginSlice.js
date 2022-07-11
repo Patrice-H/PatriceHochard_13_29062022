@@ -21,7 +21,7 @@ export const loginSlice = createSlice({
   name: 'login',
   initialState,
   reducers: {
-    addToken: (state, action) => {
+    setToken: (state, action) => {
       state.token = action.payload;
     },
     toggleLoginLogout: (state) => {
@@ -33,7 +33,7 @@ export const loginSlice = createSlice({
   },
 });
 
-export const { addToken, toggleLoginLogout, manageErrorLogin } =
+export const { setToken, toggleLoginLogout, manageErrorLogin } =
   loginSlice.actions;
 
 export default loginSlice.reducer;

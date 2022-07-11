@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import userProfile from '../services/userProfile';
-import { getFirstName, getLastName } from '../features/profile/profileSlice';
+import { setFirstName, setLastName } from '../features/profile/profileSlice';
 import Account from '../components/Account';
 import { accountsList } from '../data/accountsList';
 import ProfileInformations from '../components/ProfileInformations';
@@ -28,10 +28,10 @@ const Profile = () => {
     document.title = 'Argent Bank - Profile Page';
     userProfile(token).then((data) => {
       if (firstName === null) {
-        dispatch(getFirstName(data.body.firstName));
+        dispatch(setFirstName(data.body.firstName));
       }
       if (lastName === null) {
-        dispatch(getLastName(data.body.lastName));
+        dispatch(setLastName(data.body.lastName));
       }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
