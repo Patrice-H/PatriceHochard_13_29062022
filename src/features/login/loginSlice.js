@@ -11,12 +11,21 @@ if (localStorage.getItem('tokenStored') === null) {
   isUserLogedIn = true;
 }
 
+/**
+ * Setting the initial state of the login slice
+ */
 const initialState = {
   token: token,
   isUserLogedIn: isUserLogedIn,
   errorLogin: null,
 };
 
+/**
+ * Creating a slice of the login state.
+ *
+ * @redux
+ * @reduxReducer
+ */
 export const loginSlice = createSlice({
   name: 'login',
   initialState,

@@ -6,6 +6,12 @@ import { featuresList } from '../data/featuresList';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+/**
+ *  Home page component
+ *
+ * @component
+ * @returns {JSX} The React component.
+ */
 const Home = () => {
   const navigate = useNavigate();
   const isUserLogedIn = useSelector((state) => state.login.isUserLogedIn);

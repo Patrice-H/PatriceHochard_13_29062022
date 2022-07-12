@@ -10,6 +10,12 @@ import { accountsList } from '../data/accountsList';
 import ProfileInformations from '../components/ProfileInformations';
 import ProfileEditor from '../components/ProfileEditor';
 
+/**
+ *  Profile page component
+ *
+ * @component
+ * @returns {JSX} The React component.
+ */
 const Profile = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();

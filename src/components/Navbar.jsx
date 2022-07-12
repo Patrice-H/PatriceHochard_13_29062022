@@ -4,9 +4,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setToken, toggleLoginLogout } from '../features/login/loginSlice';
 import { setFirstName, setLastName } from '../features/profile/profileSlice';
 
+/**
+ * Navivation bar component
+ *
+ * @component
+ * @returns {JSX} The React component.
+ */
 const Navbar = () => {
   const dispatch = useDispatch();
 
+  /**
+   * User logout function
+   *
+   * @description When the user clicks the logout button, it removes the token from
+   * local storage and resets the state.
+   */
   const logoutUser = () => {
     dispatch(setToken(null));
     dispatch(toggleLoginLogout());

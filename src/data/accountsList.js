@@ -1,3 +1,6 @@
+/**
+ * List of accounts displayed on the profile page
+ */
 export const accountsList = [
   {
     id: 'checking-01',

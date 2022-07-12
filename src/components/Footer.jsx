@@ -1,3 +1,9 @@
+/**
+ * Footer component
+ *
+ * @component
+ * @returns {JSX} The React component.
+ */
 const Footer = () => {
   return (
     <footer className="footer">

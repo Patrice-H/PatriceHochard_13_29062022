@@ -3,6 +3,12 @@ import Navbar from '../components/Navbar';
 import SignInSection from '../components/SignInSection';
 import Footer from '../components/Footer';
 
+/**
+ *  Signin page component
+ *
+ * @component
+ * @returns {JSX} The React component.
+ */
 const SignIn = () => {
   useEffect(() => {
     document.title = 'Argent Bank - Sign In Page';

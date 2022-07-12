@@ -7,12 +7,24 @@ import {
   manageErrorLogin,
 } from '../features/login/loginSlice';
 
+/**
+ *  Login form component
+ *
+ * @component
+ * @returns {JSX} The React component.
+ */
 const SignInSection = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const errorLogin = useSelector((state) => state.login.errorLogin);
 
+  /**
+   * Login function
+   *
+   * @description Log the user in and manage errors login
+   * @see {@link login}
+   */
   const loginUser = () => {
     const remember = document.getElementById('remember-me').checked;
 
@@ -25,7 +37,6 @@ const SignInSection = () => {
         }
         if (remember) {
           localStorage.setItem('tokenStored', data.body.token);
-          console.log(sessionStorage.getItem('tokenStored'));
         }
         navigate('/profile');
       } else {

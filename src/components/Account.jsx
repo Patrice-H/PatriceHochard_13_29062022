@@ -1,3 +1,11 @@
+/**
+ * Account component
+ *
+ * @description It takes in three props, and returns a section with a title, an amount, and a description
+ * @component
+ * @param {object} - The props of the component
+ * @returns {JSX} The React component.
+ */
 const Account = ({ title, amount, description }) => {
   const formatAmount = () => {
     return new Intl.NumberFormat('en-IN', {

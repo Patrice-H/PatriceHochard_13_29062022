@@ -1,3 +1,11 @@
+/**
+ * Feature component
+ *
+ * @description It takes in an object with four properties, and returns a div with three children.
+ * @component
+ * @param {object} - The props of the component
+ * @returns {JSX} The React component.
+ */
 const Feature = ({ src, alt, title, text }) => {
   return (
     <div className="feature-item">

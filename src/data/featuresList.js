@@ -2,6 +2,9 @@ import iconChat from '../assets/icon-chat.png';
 import iconMoney from '../assets/icon-money.png';
 import iconSecurity from '../assets/icon-security.png';
 
+/**
+ * List of site features displayed on the home page
+ */
 export const featuresList = [
   {
     id: 'chat01',

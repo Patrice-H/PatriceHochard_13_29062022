@@ -6,12 +6,25 @@ import {
 } from '../features/profile/profileSlice';
 import updateProfile from '../services/updateProfile';
 
+/**
+ * Profile editor component
+ *
+ * @description Component allowing profile editing
+ * @component
+ * @returns {JSX} The React component.
+ */
 const ProfileEditor = () => {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.login.token);
   const firstName = useSelector((state) => state.profile.firstName);
   const lastName = useSelector((state) => state.profile.lastName);
 
+  /**
+   * User update function
+   *
+   * @description Updates profile state and lauches function to update in database
+   * @see {@link updateProfile}
+   */
   const editName = () => {
     const firstInput = document.getElementById('first-input').value;
     const lastInput = document.getElementById('last-input').value;

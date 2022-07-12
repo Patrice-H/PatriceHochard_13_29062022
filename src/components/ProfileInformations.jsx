@@ -1,6 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { setEditMode } from '../features/profile/profileSlice';
 
+/**
+ * Profile information component
+ *
+ * @description Component allowing the display of profile information
+ * @component
+ * @returns {JSX} The React component.
+ */
 const ProfileInformations = () => {
   const firstName = useSelector((state) => state.profile.firstName);
   const lastName = useSelector((state) => state.profile.lastName);

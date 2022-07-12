@@ -1,11 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+/**
+ * Setting the initial state of the Profile slice
+ */
 const initialState = {
   firstName: null,
   lastName: null,
   editMode: false,
 };
 
+/**
+ * Creating a slice of the profile state.
+ *
+ * @redux
+ * @reduxReducer
+ */
 export const profileSlice = createSlice({
   name: 'profile',
   initialState,
