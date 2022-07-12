@@ -327,6 +327,19 @@ body {
   color: #fff;
 }
 
+.error-404-number {
+  font-size: 192px;
+  font-weight: bold;
+  color: #00bc77;
+  margin-top: 100px;
+}
+
+.error-404-text {
+  font-weight: bold;
+  color: #244b30;
+  margin: 0 50px;
+}
+
 @media (min-width: 720px) {
   .account {
     flex-direction: row;

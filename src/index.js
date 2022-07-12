@@ -9,6 +9,7 @@ import { store } from './app/store';
 import { Provider } from 'react-redux';
 import { persistStore } from 'reduxjs-toolkit-persist';
 import { PersistGate } from 'reduxjs-toolkit-persist/integration/react';
+import Error404 from './pages/Error404';
 
 let persistor = persistStore(store);
 
@@ -21,6 +22,7 @@ root.render(
           <Route path="/" element={<Home />}></Route>
           <Route path="/signin" element={<SignIn />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
+          <Route path="*" element={<Error404 />}></Route>
         </Routes>
       </Router>
     </PersistGate>
