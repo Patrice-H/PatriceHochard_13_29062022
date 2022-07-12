@@ -8,7 +8,7 @@ import './index.css';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 import { persistStore } from 'reduxjs-toolkit-persist';
-import { PersistGate } from 'redux-persist/integration/react';
+import { PersistGate } from 'reduxjs-toolkit-persist/integration/react';
 
 let persistor = persistStore(store);
 
