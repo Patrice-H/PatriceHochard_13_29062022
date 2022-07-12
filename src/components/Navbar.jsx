@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import logo from '../assets/argentBankLogo.png';
 import { useDispatch, useSelector } from 'react-redux';
-import { setToken, toggleLoginLogout } from '../features/login/loginSlice';
-import { setFirstName, setLastName } from '../features/profile/profileSlice';
+import { setToken, toggleLoginLogout } from '../features/loginSlice';
+import { setFirstName, setLastName } from '../features/profileSlice';
+import logo from '../assets/argentBankLogo.png';
 
 /**
  * Navivation bar component

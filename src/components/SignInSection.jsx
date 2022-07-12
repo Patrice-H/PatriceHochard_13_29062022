@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import login from '../services/login';
 import {
   setToken,
   toggleLoginLogout,
   manageErrorLogin,
-} from '../features/login/loginSlice';
+} from '../features/loginSlice';
+import login from '../services/login';
 
 /**
  *  Login form component

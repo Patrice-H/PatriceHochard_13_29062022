@@ -1,14 +1,14 @@
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFirstName, setLastName } from '../features/profileSlice';
 import userProfile from '../services/userProfile';
-import { setFirstName, setLastName } from '../features/profile/profileSlice';
-import Account from '../components/Account';
-import { accountsList } from '../data/accountsList';
+import Navbar from '../components/Navbar';
 import ProfileInformations from '../components/ProfileInformations';
 import ProfileEditor from '../components/ProfileEditor';
+import Account from '../components/Account';
+import Footer from '../components/Footer';
+import { accountsList } from '../data/accountsList';
 
 /**
  *  Profile page component

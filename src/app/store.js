@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import loginReducer from '../features/login/loginSlice';
-import profileReducer from '../features/profile/profileSlice';
 import { persistReducer } from 'reduxjs-toolkit-persist';
 import storageSession from 'reduxjs-toolkit-persist/lib/storage/session';
 import autoMergeLevel1 from 'reduxjs-toolkit-persist/lib/stateReconciler/autoMergeLevel1';
+import loginReducer from '../features/loginSlice';
+import profileReducer from '../features/profileSlice';
 
 /**
  * A configuration object for the persistReducer function.

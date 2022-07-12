@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Feature from '../components/Feature';
 import { featuresList } from '../data/featuresList';
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 
 /**
  *  Home page component

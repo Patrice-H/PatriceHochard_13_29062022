@@ -3,7 +3,7 @@ import {
   setFirstName,
   setLastName,
   setEditMode,
-} from '../features/profile/profileSlice';
+} from '../features/profileSlice';
 import updateProfile from '../services/updateProfile';
 
 /**
