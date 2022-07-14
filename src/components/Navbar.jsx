@@ -28,6 +28,7 @@ const Navbar = () => {
   };
 
   const isUserLogedIn = useSelector((state) => state.login.isUserLogedIn);
+  const firstName = useSelector((state) => state.profile.firstName);
 
   return (
     <nav className="main-nav">
@@ -41,10 +42,16 @@ const Navbar = () => {
       </Link>
       <div>
         {isUserLogedIn ? (
-          <Link to="/" className="main-nav-item" onClick={logoutUser}>
-            <i className="fa fa-sign-out"></i>
-            Sign Out
-          </Link>
+          <div>
+            <span className="user-icon">
+              <i className="fa fa-user"></i>
+            </span>
+            <span className="connected-user">{firstName}</span>
+            <Link to="/" className="main-nav-item" onClick={logoutUser}>
+              <i className="fa fa-sign-out"></i>
+              <span className="signout-btn">Sign Out</span>
+            </Link>
+          </div>
         ) : (
           <Link to="/signin" className="main-nav-item">
             <i className="fa fa-user-circle"></i>
