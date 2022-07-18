@@ -1,15 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import SignIn from './pages/SignIn';
-import Profile from './pages/Profile';
-import './index.css';
-import { store } from './app/store';
 import { Provider } from 'react-redux';
 import { persistStore } from 'reduxjs-toolkit-persist';
 import { PersistGate } from 'reduxjs-toolkit-persist/integration/react';
-import Error404 from './pages/Error404';
+import { store } from './app/store';
+import { routesList } from './data/routesList';
+import './index.css';
 
 let persistor = persistStore(store);
 
@@ -19,10 +16,9 @@ root.render(
     <PersistGate loading={null} persistor={persistor}>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/signin" element={<SignIn />}></Route>
-          <Route path="/profile" element={<Profile />}></Route>
-          <Route path="*" element={<Error404 />}></Route>
+          {routesList.map((route) => (
+            <Route key={route.id} path={route.path} element={route.element} />
+          ))}
         </Routes>
       </Router>
     </PersistGate>
