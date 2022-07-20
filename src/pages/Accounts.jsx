@@ -11,12 +11,12 @@ import Footer from '../components/Footer';
 import { accountsList } from '../data/accountsList';
 
 /**
- *  Profile page component
+ *  Accounts page component
  *
  * @component
  * @returns {JSX} The React component.
  */
-const Profile = () => {
+const Accounts = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -31,7 +31,7 @@ const Profile = () => {
       navigate('/');
       return;
     }
-    document.title = 'Argent Bank - Profile Page';
+    document.title = 'Argent Bank - Accounts Page';
     userProfile(token).then((data) => {
       if (firstName === null) {
         dispatch(setFirstName(data.body.firstName));
@@ -63,4 +63,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Accounts;
