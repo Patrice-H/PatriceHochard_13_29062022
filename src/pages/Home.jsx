@@ -19,7 +19,7 @@ const Home = () => {
   useEffect(() => {
     document.title = 'Argent Bank - Home Page';
     if (isUserLogedIn) {
-      navigate('/profile');
+      navigate('/accounts');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

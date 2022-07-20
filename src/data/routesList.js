@@ -1,6 +1,6 @@
 import Home from '../pages/Home';
 import SignIn from '../pages/SignIn';
-import Profile from '../pages/Profile';
+import Accounts from '../pages/Accounts';
 import Error404 from '../pages/Error404';
 
 /**
@@ -19,8 +19,8 @@ export const routesList = [
   },
   {
     id: 'profile-03',
-    path: '/profile',
-    element: <Profile />,
+    path: '/accounts',
+    element: <Accounts />,
   },
   {
     id: 'error-04',

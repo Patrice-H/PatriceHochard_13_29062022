@@ -38,7 +38,7 @@ const SignInSection = () => {
         if (remember) {
           localStorage.setItem('tokenStored', data.body.token);
         }
-        navigate('/profile');
+        navigate('/accounts');
       } else {
         const errorMessage = data.message.split('Error: ')[1];
         dispatch(manageErrorLogin(errorMessage));
