@@ -17,7 +17,7 @@ const SignIn = () => {
   return (
     <>
       <Navbar />
-      <main className="main bg-dark">
+      <main className="main signin bg-dark">
         <SignInSection />
       </main>
       <Footer />

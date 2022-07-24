@@ -13,9 +13,18 @@ body {
   min-height: 100vh;
 }
 
+button {
+  cursor: pointer;
+}
+
 .main {
   flex: 1;
   padding-bottom: 0.5rem;
+}
+
+.main.signin {
+  padding-top: 50px;
+  padding-bottom: 5.5rem;
 }
 
 .bg-dark {
