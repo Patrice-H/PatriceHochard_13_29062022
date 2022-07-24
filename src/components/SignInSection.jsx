@@ -59,7 +59,12 @@ const SignInSection = () => {
                 <label htmlFor="username">Username</label>
                 <span>not found</span>
               </div>
-              <input type="text" id="username" className="input-error" />
+              <input
+                type="text"
+                id="username"
+                className="input-error"
+                onChange={() => dispatch(manageErrorLogin(null))}
+              />
             </>
           ) : (
             <>
@@ -75,7 +80,12 @@ const SignInSection = () => {
                 <label htmlFor="password">Password</label>
                 <span>is invalid</span>
               </div>
-              <input type="password" id="password" className="input-error" />
+              <input
+                type="password"
+                id="password"
+                className="input-error"
+                onChange={() => dispatch(manageErrorLogin(null))}
+              />
             </>
           ) : (
             <>
