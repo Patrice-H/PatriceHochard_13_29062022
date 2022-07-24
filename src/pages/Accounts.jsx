@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFirstName, setLastName } from '../features/profileSlice';
+import { setFirstName, setLastName } from '../redux/profileSlice';
 import userProfile from '../services/userProfile';
 import Navbar from '../components/Navbar';
 import ProfileInformations from '../components/ProfileInformations';

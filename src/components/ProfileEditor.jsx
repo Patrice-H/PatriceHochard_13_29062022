@@ -1,9 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  setFirstName,
-  setLastName,
-  setEditMode,
-} from '../features/profileSlice';
+import { setFirstName, setLastName, setEditMode } from '../redux/profileSlice';
 import updateProfile from '../services/updateProfile';
 
 /**

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { setToken, toggleLoginLogout } from '../features/loginSlice';
-import { setFirstName, setLastName } from '../features/profileSlice';
+import { setToken, toggleLoginLogout } from '../redux/loginSlice';
+import { setFirstName, setLastName } from '../redux/profileSlice';
 import logo from '../assets/argentBankLogo.png';
 
 /**

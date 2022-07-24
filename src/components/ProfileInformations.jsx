@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { setEditMode } from '../features/profileSlice';
+import { setEditMode } from '../redux/profileSlice';
 
 /**
  * Profile information component

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { persistStore } from 'reduxjs-toolkit-persist';
 import { PersistGate } from 'reduxjs-toolkit-persist/integration/react';
-import { store } from './app/store';
+import { store } from './redux/store';
 import { routesList } from './data/routesList';
 import './index.css';
 

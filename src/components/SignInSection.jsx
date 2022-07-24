@@ -4,7 +4,7 @@ import {
   setToken,
   toggleLoginLogout,
   manageErrorLogin,
-} from '../features/loginSlice';
+} from '../redux/loginSlice';
 import login from '../services/login';
 
 /**
